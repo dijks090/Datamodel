@@ -17,7 +17,7 @@ public class Regeling implements Metable {
     private List<Waarde> waardes;
     private List<Product> producten;
     // @Embeddable
-    private MetaData meta = new MetaData();
+    private MetaData metaData = new MetaData();
 
     public Regeling(List<Premie> premies
             , List<DeelnameVoorwaarde> deelnameVoorwaardes
@@ -35,21 +35,21 @@ public class Regeling implements Metable {
 
     @Override
     public void setState(Meta.State newState) {
-        meta.setState(newState);
+        metaData.setState(newState);
     }
 
     @Override
     public Meta.State getState() {
-        return meta.getState();
+        return metaData.getState();
     }
 
     @Override
     public Date getBegindatum() {
-        return meta.getBegindatum();
+        return metaData.getBegindatum();
     }
 
     @Override
     public UUID getGroupId() {
-        return meta.getGroupId();
+        return metaData.getGroupId();
     }
 }

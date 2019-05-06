@@ -14,30 +14,30 @@ public class Contract implements Metable {
 
     public List<Waarde> aangepasteWaardes;
     public List<Product> gekozenProducten;
-    private MetaData meta =new MetaData();
+    private MetaData metaData =new MetaData();
 
-    public Contract(List<Waarde> aangepasteWaardes, List<Product> gekozenProducten, Metable meta) {
+    public Contract(List<Waarde> aangepasteWaardes, List<Product> gekozenProducten) {
         this.aangepasteWaardes = aangepasteWaardes;
         this.gekozenProducten = gekozenProducten;
     }
 
     @Override
     public void setState(Meta.State newState) {
-        meta.setState(newState);
+        metaData.setState(newState);
     }
 
     @Override
     public Meta.State getState() {
-        return meta.getState();
+        return metaData.getState();
     }
 
     @Override
     public Date getBegindatum() {
-        return meta.getBegindatum();
+        return metaData.getBegindatum();
     }
 
     @Override
     public UUID getGroupId() {
-        return meta.getGroupId();
+        return metaData.getGroupId();
     }
 }

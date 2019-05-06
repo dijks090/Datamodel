@@ -6,7 +6,6 @@ import meta.Metable;
 import product.Product;
 import waarde.Waarde;
 
-import java.awt.print.PrinterJob;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
@@ -15,32 +14,31 @@ public class Deelname implements Metable {
 
     public List<Waarde> aangepasteWaardes;
     public List<Product> afgenomenProducten;
-    private MetaData meta;
+    private MetaData metaData;
 
-    public Deelname(List<Waarde> aangepasteWaardes, List<Product> afgenomenProducten, Metable meta) {
+    public Deelname(List<Waarde> aangepasteWaardes, List<Product> afgenomenProducten) {
         this.aangepasteWaardes = aangepasteWaardes;
         this.afgenomenProducten = afgenomenProducten;
-        this.meta = new MetaData();
+        this.metaData = new MetaData();
     }
-
 
     @Override
     public void setState(Meta.State newState) {
-        meta.setState(newState);
+        metaData.setState(newState);
     }
 
     @Override
     public Meta.State getState() {
-        return meta.getState();
+        return metaData.getState();
     }
 
     @Override
     public Date getBegindatum() {
-        return meta.getBegindatum();
+        return metaData.getBegindatum();
     }
 
     @Override
     public UUID getGroupId() {
-        return meta.getGroupId();
+        return metaData.getGroupId();
     }
 }
